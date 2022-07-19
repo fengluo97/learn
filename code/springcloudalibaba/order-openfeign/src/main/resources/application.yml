@@ -1,0 +1,29 @@
+server:
+  port: 8040
+
+# 应用名称 （nacos会将该名称当作服务名称）
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 192.168.219.143:8847
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+
+logging:
+  level:
+    com.fengluo.order.feign: debug
+
+feign:
+  client:
+    config:
+      product-service:
+        loggerLevel: BASIC
+        contract: feign.Contract.Default
+        # 连接超时时间，默认2s
+        connectTimeout: 5000
+        # 请求处理超时时间，默认5s
+        readTimeout: 2000
