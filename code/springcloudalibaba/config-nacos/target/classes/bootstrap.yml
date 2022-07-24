@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: com.fengluo.order # 根据服务名去获取对应的 Data Id 的配置文件
+  cloud:
+    nacos:
+      server-addr: 192.168.219.143:8847
+      username: nacos
+      password: nacos
+#      config:
+#        namespace: public
+#        file-extension: yaml
+#        namespace: dev
+      # nacos 客户端默认读取 properties格式的配置文件
